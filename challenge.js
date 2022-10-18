@@ -49,4 +49,42 @@ function sumZero(nums){
         }
     }
 }
-console.log(sumZero([-4, -2, -1, 0, 1, 2 ,3]));
+// console.log(sumZero([-4, -2, -1, 0, 1, 2 ,3]));
+
+function sameFrequency(num1, num2){
+    let freq1 = {}
+    let freq2 = {}
+    let str1 = num1.toString()
+    
+    let str2 = num2.toString()
+    if(str1.length !== str2.length){
+        return false
+    }
+    for(let i = 0; i < str1.length; i++){
+        freq1[str1[i]] = freq1[str1[i]] + 1 || 1
+    }
+
+    for(let j =0; j < str1.length; j++){
+        freq2[str2[j]] = freq2[str2[j]] + 1 || 1
+    }
+    for(let key in freq1){
+        if(freq1[key]!=freq2[key]){
+            return false;
+        }
+    }
+    return true
+}
+// console.log(sameFrequency(182, 281));
+var twoSum = function(nums, target) {
+    let map = {}
+    for(let i = 0; i < nums.length; i++){
+        let curr = target-nums[i]
+        if(curr in map){
+            return[curr, nums[i]]
+        }else{
+            map[nums[i]] = true
+        }
+    }
+};
+console.log(twoSum([3,2,4], 6));
+
