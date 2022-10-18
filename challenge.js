@@ -122,4 +122,20 @@ var reverse = function(x) {
         return number
     }
 };
-console.log(reverse(-1534236469));
+// console.log(reverse(-1534236469));
+
+//finding first unique character
+var firstUniqChar = function(s) {
+    let map = {}
+    for(let i = 0; i < s.length; i++){
+        map[s[i]] = map[s[i]] + 1 || 1
+        
+    }
+    for(let key in map){
+        if(map[key] == 1){
+            return s.indexOf(key)
+        }
+    }
+    return -1
+};
+console.log(firstUniqChar('loveleetcode'));
