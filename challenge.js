@@ -102,5 +102,24 @@ var moveZeroes = function(nums) {
     }
     return nums
 };
-console.log(moveZeroes([0,1,0,3,12]));
+// console.log(moveZeroes([0,1,0,3,12]));
 
+
+
+var reverse = function(x) {
+
+    let str = '' + x
+    let split = str.split('').reverse()
+    let right = split.length - 1
+    if(split[right] == '-'){
+        split.pop()
+        split.unshift('-')
+    }
+    let number = parseInt(split.join(''))
+    if(number > Math.pow(2,31) || number < Math.pow(2, 31) * 1){
+        return 0;
+    }else{
+        return number
+    }
+};
+console.log(reverse(-1534236469));
